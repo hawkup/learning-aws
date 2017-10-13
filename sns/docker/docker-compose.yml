@@ -1,0 +1,22 @@
+version: "3"
+services:
+  laravel-sns:
+    build: ./web
+    ports:
+      - "80:80"
+    volumes:
+      - "../laravel-sns:/var/www/html/"
+    links:
+      - laravel-db
+
+  laravel-db: 
+    build:
+      context: ./db
+      args:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=laravel-sns
+        - MYSQL_USER=homestead
+        - MYSQL_PASSWORD=secret
+    ports:
+      - "3306:3306"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
