@@ -1,0 +1,14 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [{
+        "name": "my-apache2",
+        "image": "xxx.dkr.ecr.ap-southeast-1.amazonaws.com/apache2",
+        "environment": [],
+        "essential": true,
+        "memory": 512,
+        "portMappings": [{
+            "hostPort": 80,
+            "containerPort": 80
+        }]
+    }]
+}
