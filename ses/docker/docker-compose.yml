@@ -1,0 +1,8 @@
+version: "3"
+services:
+  laravel-ses:
+    build: ./web
+    ports:
+      - "80:80"
+    volumes:
+      - "../laravel-ses:/var/www/html/"
